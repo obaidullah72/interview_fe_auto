@@ -1,0 +1,115 @@
+.question-player {
+  margin-bottom: 3rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.question-header {
+  margin-bottom: 1.5rem;
+}
+
+.question-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--navy-primary);
+  color: var(--white);
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.question-badge::before {
+  content: '❓';
+  font-size: 1.125rem;
+}
+
+.question-content {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+  border-left: 5px solid var(--navy-primary);
+  border: 1px solid var(--border-light);
+}
+
+.question-text {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.btn {
+  padding: 1.125rem 2.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 220px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn-secondary {
+  background: var(--grey-darker);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--text-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+  .question-text {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    min-width: 100%;
+    width: 100%;
+  }
+}
